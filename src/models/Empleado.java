@@ -32,9 +32,12 @@ public class Empleado implements Comparable<Empleado> {
 
     @Override
     public int hashCode() {
+        return Integer.hashCode(id);
+        /* 
         int result = Integer.hashCode(id);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+        */
         
     }
 
@@ -43,8 +46,14 @@ public class Empleado implements Comparable<Empleado> {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Empleado empleado = (Empleado) obj;
+        return this.id == empleado.id;
+        /* 
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Empleado empleado = (Empleado) obj;
         return id == empleado.id &&
                (name != null ? name.equals(empleado.name) : empleado.name == null);
+        */
         
       
     }
