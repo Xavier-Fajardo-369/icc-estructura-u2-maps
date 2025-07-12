@@ -1,3 +1,4 @@
+import controllers.Ejercicios;
 import controllers.EmpleadoContoller;
 import controllers.EmpleadoDAO;
 import controllers.EmpleadoDAOHashMap;
@@ -13,6 +14,7 @@ public class App {
         // Ejecuta el ejemplo de uso de HashMap con ejemplos sencillos
         runMapExamlpe();
         runEmpleadoExample();
+        runEjerccios();
 
         // // Ejecuta el ejemplo de gestión de empleados usando HashMap
         // runEmpleadoExample();
@@ -66,7 +68,23 @@ public class App {
     }
 
     private static void runEjerccios() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Ejercicios ejercicios = new Ejercicios();
+        int[] nums = {9, 2, 3, 6};
+        int objetivo = 5;
+        int[] resultado = ejercicios.sumatoriaDeDos(nums, objetivo);
+        if (resultado != null) {
+            System.out.println("Indices que suman " + objetivo + ": [" + resultado[0] + ", " + resultado[1] + "]");
+        } else {
+            System.out.println("No se encontraron indices que sumen " + objetivo);
+        }
+        String palabra1 = "roma";
+        String palabra2 = "amor";
+        boolean sonAnagramas = ejercicios.sonAnagramas(palabra1, palabra2);
+        System.out.println("¿Son anagramas '" + palabra1 + "' y '" + palabra2 + "'? " + sonAnagramas);
+        String texto = "hola";
+        System.out.println("Frecuencia de caracteres en '" + texto + "':");
+        ejercicios.contarCaracteres(texto);
+
 
     }
 }
